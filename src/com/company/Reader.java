@@ -6,8 +6,7 @@ public class Reader {
 
     public static Book choiceBook(Book[] book) {
         Random random = new Random();
-        int a = random.nextInt(5);
-        return book[a];
+        return book[random.nextInt(5)];
     }
 
     public static void readBook(Book book) {
@@ -17,11 +16,8 @@ public class Reader {
     public static void bookRating(Book book) {
 
         Random random = new Random();
-        int a = 0;
-        int b = 0;
-        int c = 0;
-        int d = 0;
 
+        int a = 0;
         int count = 0;
 
         if (book.name == null) {
@@ -33,22 +29,22 @@ public class Reader {
         if (book.author == null) {
             count = count - random.nextInt();
         } else {
-            b = book.author.replaceAll(" ", "").length();
+            a = a + book.author.replaceAll(" ", "").length();
         }
 
         if (book.serialNumber == 0) {
             count = count - random.nextInt();
         } else {
-            c = book.serialNumber;
+            a = a - book.serialNumber;
         }
 
         if (book.numberOfPages == 0) {
             count = count - random.nextInt();
         } else {
-            d = book.numberOfPages;
+            a = a + book.numberOfPages;
         }
 
-        int rating = a + b - c + d + count;
+        int rating = a + count;
 
         System.out.println(rating);
 
