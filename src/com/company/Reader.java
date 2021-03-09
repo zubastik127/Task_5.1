@@ -6,7 +6,7 @@ public class Reader {
 
     public static Book choiceBook(Book[] book) {
         Random random = new Random();
-        return book[random.nextInt(5)];
+        return book[random.nextInt(book.length)];
     }
 
     public static void readBook(Book book) {
